@@ -1,0 +1,44 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: design
+spec:
+  version: "v0.0.1"
+  homepage: https://kunalkushwaha.github.io/kubectl-design/
+  shortDescription: "Generate and modify YAML definations with single command"
+  description: |
+    Design helps to generate kubernetes resource yaml definations using
+    kubectl create/run command line options and opens it in your editor
+    to modify and use it.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/kunalkushwaha/kubectl-design/releases/download/v0.0.1/kubectl-design_0.0.1_Darwin_x86_64.tar.gz
+    sha256: "0983623065059787267e0bdd17e1aab2293e17f19f511e8be9153252c56b562d"
+    files:
+    - from: "kubectl-design-darwin"
+      to: "kubectl-design"
+    bin: kubectl-design
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/kunalkushwaha/kubectl-design/releases/download/v0.0.1/kubectl-design_0.0.1_Linux_x86_64.tar.gz
+    sha256: "bce189bc3a151655b9891840affe0a12a0386afec716d5781f7385250add3004"
+    files:
+    - from: "kubectl-design"
+      to: "kubectl-design"
+    bin: kubectl-design
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/kunalkushwaha/kubectl-design/releases/download/v0.0.1/kubectl-design_0.0.1_Windows_x86_64.tar.gz
+    sha256: "0c1fbbcbf66ee6451a20c1519c4ff6095367b1b8df9c6aad1b44a1bfc17c753a"
+    files:
+    - from: "kubectl-design.exe"
+      to: "kubectl-design.exe"
+    bin: kubectl-design.exe
+
